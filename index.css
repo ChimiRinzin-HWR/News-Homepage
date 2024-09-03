@@ -1,0 +1,239 @@
+@import url(./reset.css);
+
+:root{
+    --Softorange: hsl(35, 77%, 62%);
+    --Softred: hsl(5, 85%, 63%);
+
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayishblue: hsl(233, 8%, 79%);
+    --Darkgrayishblue: hsl(236, 13%, 42%);
+    --Verydarkblue: hsl(240, 100%, 5%);
+}
+html, body{
+    font-family: 'Inter';
+    background-color: var(--Off-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    position: relative;
+}
+
+main{
+    max-width: 70rem;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 2rem;
+}
+.close, .menu{
+    display: none;
+}
+.links{
+    cursor: pointer;
+    color: var(--Darkgrayishblue);
+}
+.links:hover{
+    color: var(--Softred);
+}
+.nani{
+    display: flex;
+    gap: 1rem;
+}
+.mobile{
+    display: none;
+}
+.grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.firstimg{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 1 / 2;
+    height: auto;
+    h1{
+        width: 51%;
+        font-weight: 800;
+        font-size: 3.5rem;
+        padding: 2rem 3rem 0 0;
+        line-height: 3.5rem;
+    }
+    .withbutton{
+        width: 49%;
+        padding: 2rem 0 0;
+        p{
+            color: var(--Darkgrayishblue);
+        }
+    }
+    button{
+        margin: 2rem 0 0;
+        padding: 0.8rem;
+        width: 50%;
+        border: none;
+        background-color: var(--Softred);
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        font-weight: 700;
+    }
+}
+button:hover{
+    cursor: pointer;
+    background-color: var(--Verydarkblue);
+    color: white;
+}
+.below{
+    display: flex;
+}
+.right{
+    grid-row: 1;
+    background-color: var(--Verydarkblue);
+    color: white;
+    padding: 2rem;
+    height: 100%;
+    h2{
+        color: var(--Softorange);
+        font-size: 2rem;
+    }
+    h3{
+        font-size: 1.2rem;
+        margin: 1.5rem 0 0;
+    }
+}
+.right h3:hover{
+    cursor: pointer;
+    color: var(--Softorange);
+}
+.statements{
+    color: var(--Grayishblue);
+    font-size: 1rem;
+}
+.statementsr{
+    border-bottom: 1px solid var(--Darkgrayishblue);
+    padding: 0.5rem 0 1.5rem;
+}
+.one, .two, .three{
+    display: flex;
+    gap: 1.5rem;
+    grid-row: 3;
+    height: auto;
+    h3{
+        color: var(--Softred);
+        font-size: 1.3rem;
+    }
+    h4{
+        margin: 0 0 0.4rem;
+    }
+    p{
+        color: var(--Darkgrayishblue);
+    }
+    img{
+        width: 5rem;
+    }
+
+}
+.one h4:hover, .two h4:hover, .three h4:hover{
+    color: var(--Softred);
+    cursor: pointer;
+}
+footer{
+    position: absolute;
+    top: 100%;
+}
+@media screen and (max-width: 575px){
+    html, body{
+        width: 100%;
+        padding: 0.5rem;
+    }
+    main{
+        max-width: 100%;
+    }
+    .top{
+        align-items: center;
+        padding: 0 0 2rem;
+    }
+    .menu{
+        display: block;
+    }
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+    .grid{
+        display: block;
+    }
+    .firstimg{
+        h1{
+            width: 100%;
+            line-height: 3.5rem;
+        }
+        .withbutton{
+            width: 100%;
+            padding: 1rem 0 0;
+        }
+        button{
+            margin: 1.5rem 0 4rem;
+        }
+    }
+    .below{
+        display: flex;
+        flex-direction: column;
+    }
+    .right{
+        margin: 0 0 4rem;
+    }
+    .one, .two, .three{
+        margin: 0 0 2rem;
+    }
+    .one h4:hover, .two h4:hover, .three h4:hover{
+        color: var(--Softred);
+        cursor: pointer;
+    }
+    .menu{
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        left: 90%;
+    }
+    .nani{
+        position: fixed;
+        background-color: var(--Off-white);
+        top: 0;
+        left: 99%;
+        padding: 10rem 2rem;
+        height: 100%;
+        width: 65%;
+        flex-direction: column;
+        gap: 1.5rem;
+        transition: transform 0.5s ease-in;
+    }
+    .clicked{
+        transform: translateX(-95%);
+        opacity: 1;
+        box-shadow: 0 0 1px 5000px rgba(0, 0, 0, 0.5);
+    }
+    .close{
+        display: block;
+        cursor: pointer;
+        opacity: 0;
+        z-index: -1;
+        transform: rotate(0deg);
+        transition: transform 0.5s ease-out;
+    }
+    .clicked1{
+        transform: rotate(90deg);
+        opacity: 1;
+        z-index: 1;
+    }
+    .links{
+        color: var(--Verydarkblue);
+        font-weight: 550;
+    }
+}
