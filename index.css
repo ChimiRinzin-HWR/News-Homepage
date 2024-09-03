@@ -156,6 +156,7 @@ footer{
     .top{
         align-items: center;
         padding: 0 0 2rem;
+        position: relative;
     }
     .menu{
         display: block;
@@ -200,7 +201,7 @@ footer{
         display: block;
         cursor: pointer;
         position: absolute;
-        left: 90%;
+        left: 91%;
     }
     .nani{
         position: fixed;
